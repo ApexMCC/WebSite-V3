@@ -1,0 +1,148 @@
+/* ===== Staff & Careers page ===== */
+
+.staff {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.staff h1 {
+  font-size: 2rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 0.5rem;
+}
+
+.staff-sub {
+  color: var(--gray-muted);
+  margin-bottom: 2rem;
+}
+
+.staff-note {
+  display: inline-block;
+  background: rgba(59, 201, 78, 0.12);
+  border: 1px solid rgba(59, 201, 78, 0.4);
+  color: var(--accent-green-light);
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 4px;
+  margin-bottom: 2.5rem;
+}
+
+.staff-section {
+  margin-bottom: 2.5rem;
+}
+
+.staff-section h2 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent-green-light);
+  border-bottom: 1px solid var(--gray-dark);
+  padding-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
+}
+
+.staff-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(41, 49, 43, 0.35);
+  border: 1px solid var(--gray-dark);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.staff-table th,
+.staff-table td {
+  text-align: left;
+  padding: 0.7rem 1rem;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(41, 49, 43, 0.8);
+}
+
+.staff-table th {
+  background: var(--gray-dark);
+  color: var(--text-light);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 700;
+}
+
+.staff-table tbody tr:hover {
+  background: rgba(59, 201, 78, 0.06);
+}
+
+.staff-table .num {
+  color: var(--gray-muted);
+  white-space: nowrap;
+}
+
+.status {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.status.filled {
+  background: rgba(51, 163, 63, 0.18);
+  color: var(--accent-green-light);
+  border: 1px solid var(--accent-green);
+}
+
+.status.vacant {
+  background: rgba(234, 241, 235, 0.08);
+  color: var(--text-light);
+  border: 1px solid var(--gray-muted);
+}
+
+.status.partially {
+  background: rgba(217, 119, 6, 0.15);
+  color: #fbbf24;
+  border: 1px solid #b45309;
+}
+
+.status.not-needed {
+  background: rgba(80, 101, 83, 0.15);
+  color: var(--gray-muted);
+  border: 1px solid var(--gray-dark);
+}
+
+.apply-link {
+  color: var(--accent-green-light);
+  text-decoration: none;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.apply-link:hover {
+  text-decoration: underline;
+}
+
+.apply-none {
+  color: var(--gray-muted);
+}
+
+.staff-edit {
+  margin-top: 2.5rem;
+  font-size: 0.8rem;
+  color: var(--gray-muted);
+  border-top: 1px solid var(--gray-dark);
+  padding-top: 1rem;
+}
+
+@media (max-width: 800px) {
+  .staff-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+}
