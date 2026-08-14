@@ -1,0 +1,163 @@
+/* ===== Hero slideshow (home page) ===== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  height: 100svh;
+  min-height: 520px;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  z-index: 1;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* darken the image so white text stays readable */
+.slide::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.25) 45%,
+    rgba(13, 20, 12, 0.75) 100%
+  );
+}
+
+.hero-content {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 6.5rem 2rem 2rem;
+  pointer-events: none;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.2rem, 6vw, 4.5rem);
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  color: var(--text-light);
+  text-transform: uppercase;
+  margin-bottom: 1.1rem;
+  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content h1 .hero-accent {
+  color: var(--accent-green-light);
+}
+
+.hero-content p {
+  font-size: clamp(0.95rem, 1.6vw, 1.2rem);
+  max-width: 640px;
+  color: var(--text-light);
+  opacity: 0.92;
+  margin-bottom: 2rem;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.7);
+}
+
+.hero-cta {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid var(--text-light);
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.9rem 2.6rem;
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  pointer-events: auto;
+}
+
+.hero-cta:hover {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* slideshow controls */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(234, 241, 235, 0.4);
+  color: var(--text-light);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.hero-arrow:hover {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+}
+
+.hero-arrow.prev { left: 1.5rem; }
+.hero-arrow.next { right: 1.5rem; }
+
+.dots {
+  position: absolute;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  display: flex;
+  gap: 0.7rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(234, 241, 235, 0.4);
+  border: 1px solid rgba(234, 241, 235, 0.6);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+  background: var(--accent-green);
+  border-color: var(--accent-green);
+  transform: scale(1.2);
+}
+
+@media (max-width: 600px) {
+  .hero-content { padding-top: 8rem; }
+  .hero-arrow { width: 38px; height: 38px; font-size: 1.1rem; }
+  .hero-arrow.prev { left: 0.75rem; }
+  .hero-arrow.next { right: 0.75rem; }
+}

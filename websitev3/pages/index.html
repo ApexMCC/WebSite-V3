@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apex Systems — Home</title>
+  <style>
+    :root {
+      --bg-primary: #0d140c;
+      --accent-green-light: #3bc94e;
+      --accent-green: #33a33f;
+      --accent-green-dark: #277a32;
+      --accent-green-deep: #18401c;
+      --text-light: #eaf1eb;
+      --gray-muted: #506553;
+      --gray-dark: #29312b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-light);
+      line-height: 1.5;
+    }
+  </style>
+  <link rel="stylesheet" href="../css/navbar.css" />
+  <link rel="stylesheet" href="../css/hero.css" />
+</head>
+<body>
+
+  <div data-include="../includes/nav.html" data-base="../"></div>
+
+  <!-- hero slideshow, fills the whole viewport -->
+  <section class="hero" id="hero">
+    <div class="slide active">
+      <img src="../Slideshow/2zr4b24.webp" alt="Apex campus">
+    </div>
+    <div class="slide">
+      <img src="../Slideshow/d4zf2td.webp" alt="Apex campus">
+    </div>
+    <div class="slide">
+      <img src="../Slideshow/v3kk1xk.webp" alt="Apex campus">
+    </div>
+    <div class="slide">
+      <img src="../Slideshow/wjtt28t.webp" alt="Apex campus">
+    </div>
+
+    <div class="hero-content">
+      <h1>Welcome to <span class="hero-accent">Apex</span></h1>
+      <p>Where ambition meets achievement. Explore a world-class community of innovators, leaders, and changemakers built to help you reach the top.</p>
+      <a href="#" class="hero-cta">Apply Today</a>
+    </div>
+
+    <button class="hero-arrow prev" id="prevBtn" aria-label="Previous slide">&#10094;</button>
+    <button class="hero-arrow next" id="nextBtn" aria-label="Next slide">&#10095;</button>
+
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <script src="../includes/include.js"></script>
+  <script src="../js/slideshow.js"></script>
+</body>
+</html>
