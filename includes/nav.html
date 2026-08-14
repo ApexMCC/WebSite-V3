@@ -1,61 +1,63 @@
-<link rel="stylesheet" href="../css/navbar.css" />
-<header class="navbar">
+<link rel="stylesheet" href="../css/navbar.css?v=4" />
 
-  <!-- Top section -->
-  <div class="navbar-top">
-
-    <div class="top-links">
-      <div class="top-links-left">
-        <a href="#">For: Future Students</a>
-        <span>|</span>
-        <a href="#">Current Students</a>
-        <span>|</span>
-        <a href="#">Alumni</a>
-        <span>|</span>
-        <a href="staff.html">Faculty & Staff</a>
+<header class="site-header">
+  <!-- Top Utility Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-container">
+      <div class="utility-nav-left">
+        <span>For:</span>
+        <a href="#future-students">Future Students</a>
+        <span class="separator">|</span>
+        <a href="#current-students">Current Students</a>
+        <span class="separator">|</span>
+        <a href="#alumni">Alumni</a>
+        <span class="separator">|</span>
+        <a href="#faculty-staff">Faculty &amp; Staff</a>
       </div>
-
-      <div class="top-links-right">
-        <a href="#">Apply</a>
-        <span>|</span>
-        <a href="#">Visit</a>
-        <span>|</span>
-        <a href="#">Give</a>
+      <div class="utility-nav-right">
+        <a href="#apply">Apply</a>
+        <span class="separator">|</span>
+        <a href="#visit">Visit</a>
+        <span class="separator">|</span>
+        <a href="#give">Give</a>
       </div>
     </div>
-
-    <!-- Logo -->
-    <div class="logo">
-      <div class="spartan-logo"></div>
-      <span>Apex MCC</span>
-    </div>
-
-    <!-- Search -->
-    <div class="search-box">
-      <input type="text" placeholder="Search" />
-      <div class="search-icon">⌕</div>
-    </div>
-
   </div>
 
-  <!-- Green navigation -->
-  <nav class="main-nav">
-    <div class="main-nav-inner">
-
-      <div class="nav-links">
-        <a href="#">About</a>
-        <a href="#">Admissions</a>
-        <a href="#">Academics</a>
-        <a href="#">Research</a>
-        <a href="#">Campus Life</a>
-        <a href="#">Athletics</a>
+  <!-- Middle Header: Search -->
+  <div class="middle-header">
+    <div class="container middle-container">
+      <div class="search-wrapper">
+        <input type="text" placeholder="Search" class="search-input">
+        <button type="submit" class="search-btn" aria-label="Search">
+          <svg viewBox="0 0 24 24">
+            <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+          </svg>
+        </button>
       </div>
-
-      <a href="#" class="apex-today">
-        ApexToday
-      </a>
-
     </div>
-  </nav>
+  </div>
 
+  <!-- Primary Navbar Strip -->
+  <div class="primary-navbar">
+    <div class="container nav-container">
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <span class="nav-separator">|</span>
+        <a href="#admissions">Admissions</a>
+        <span class="nav-separator">|</span>
+        <a href="#academics">Academics</a>
+        <span class="nav-separator">|</span>
+        <a href="#research">Research</a>
+        <span class="nav-separator">|</span>
+        <a href="#campus-life">Campus Life</a>
+        <span class="nav-separator">|</span>
+        <a href="#athletics">Athletics</a>
+      </nav>
+
+      <div class="nav-action">
+        <a href="#apextoday" class="btn-apextoday">ApexToday</a>
+      </div>
+    </div>
+  </div>
 </header>

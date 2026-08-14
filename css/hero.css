@@ -49,9 +49,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 6.5rem 2rem 2rem;
+  align-items: flex-start;
+  text-align: left;
+  padding: 8rem clamp(2rem, 8vw, 6rem) 14rem;
   pointer-events: none;
 }
 
@@ -156,7 +156,7 @@
 }
 
 @media (max-width: 600px) {
-  .hero-content { padding-top: 8rem; }
+  .hero-content { padding: 8rem 1.5rem 12rem; }
   .hero-arrow { width: 38px; height: 38px; font-size: 1.1rem; }
   .hero-arrow.prev { left: 0.75rem; }
   .hero-arrow.next { right: 0.75rem; }
