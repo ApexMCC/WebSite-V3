@@ -28,6 +28,142 @@
       color: var(--text-light);
       line-height: 1.5;
     }
+
+    .directory-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .breadcrumb {
+      font-size: 0.875rem;
+      color: var(--gray-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .breadcrumb a {
+      color: var(--accent-green-light);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    .directory-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .search-box-container {
+      position: relative;
+      margin-bottom: 2rem;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      background: var(--gray-dark);
+      border: 1px solid var(--gray-muted);
+      border-radius: 4px;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+
+    .search-input::placeholder {
+      color: var(--gray-muted);
+    }
+
+    .tabs-container {
+      background: repeating-linear-gradient(
+        45deg,
+        var(--gray-dark),
+        var(--gray-dark) 10px,
+        var(--bg-primary) 10px,
+        var(--bg-primary) 20px
+      );
+      border-bottom: 2px solid var(--accent-green-deep);
+      margin-bottom: 2rem;
+    }
+
+    .tabs-list {
+      display: flex;
+      list-style: none;
+      background: var(--bg-primary);
+      max-width: fit-content;
+      border-top: 3px solid var(--accent-green-dark);
+    }
+
+    .tab-item {
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--gray-muted);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .tab-item.active {
+      color: var(--accent-green-light);
+      background: var(--gray-dark);
+      border-bottom: 3px solid var(--accent-green-light);
+    }
+
+    .staff-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    .staff-table th {
+      padding: 1rem 0.75rem;
+      border-bottom: 2px solid var(--text-light);
+      color: var(--text-light);
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .staff-table td {
+      padding: 1.25rem 0.75rem;
+      border-bottom: 1px solid var(--gray-dark);
+      vertical-align: middle;
+    }
+
+    .staff-name {
+      color: var(--accent-green-light);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      display: block;
+    }
+
+    .staff-name:hover {
+      text-decoration: underline;
+    }
+
+    .staff-role {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-top: 0.2rem;
+    }
+
+    .apply-link {
+      color: var(--accent-green-light);
+      text-decoration: none;
+    }
+
+    .apply-link:hover {
+      text-decoration: underline;
+    }
+
+    .staff-edit {
+      margin-top: 2rem;
+      font-size: 0.875rem;
+      color: var(--gray-muted);
+    }
   </style>
   <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/staff.css" />
@@ -36,41 +172,95 @@
 
   <div data-include="../includes/nav.html" data-base="../"></div>
 
-  <main class="staff">
-    <h1>APEX MCC Staff Directory</h1>
-    <p class="staff-sub">Current staff and their roles.</p>
+  <main class="directory-container">
+    <div class="breadcrumb">
+      <a href="#">Home</a> / <span>Apex MCC</span>
+    </div>
+
+    <h1 class="directory-title">Search Directory</h1>
+
+    <div class="search-box-container">
+      <input type="text" class="search-input" placeholder="Search by name" />
+    </div>
+
+    <div class="tabs-container">
+      <ul class="tabs-list">
+        <li class="tab-item active">Employees</li>
+        <li class="tab-item">Departments</li>
+        <li class="tab-item">Campus Locations</li>
+      </ul>
+    </div>
 
     <section class="staff-section">
       <table class="staff-table">
         <thead>
-          <tr><th>Name</th><th>Role</th><th>Email</th><th>Phone Number</th></tr>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+          </tr>
         </thead>
-        <tbody>
+        <tbody id="staff-tbody">
           <tr>
-            <td>Mr. Brewer</td>
+            <td>
+              <a href="mailto:jordan.brewer@district.apexmcc.org" class="staff-name">Jordan Brewer</a>
+              <div class="staff-role">—</div>
+            </td>
             <td>Building Director</td>
-            <td><a class="apply-link" href="mailto:brewer@apexmcc.com">brewer@apexmcc.com</a></td>
-            <td>—</td>
+            <td><a class="apply-link" href="mailto:jordan.brewer@district.apexmcc.org">Email Jordan Brewer</a></td>
+            <td><a class="apply-link" href="tel:+12312278971p1200">+1 (231) 227-8971 x1200</a></td>
           </tr>
           <tr>
-            <td>Ms. Evans</td>
+            <td>
+              <a href="mailto:rayne.evans@district.apexmcc.org" class="staff-name">Rayne Evans</a>
+              <div class="staff-role">—</div>
+            </td>
             <td>HR Director, Systems Administrator</td>
-            <td><a class="apply-link" href="mailto:evans@apexmcc.com">evans@apexmcc.com</a></td>
-            <td>—</td>
+            <td><a class="apply-link" href="mailto:rayne.evans@district.apexmcc.org">Email Rayne Evans</a></td>
+            <td><a class="apply-link" href="tel:+12312278971p1600">+1 (231) 227-8971 x1600</a></td>
           </tr>
           <tr>
-            <td>Mr. Poudel</td>
+            <td>
+              <a href="mailto:jayesh.poudel@apexmcc.org" class="staff-name">Jayesh Poudel</a>
+              <div class="staff-role">—</div>
+            </td>
             <td>IT Director</td>
-            <td><a class="apply-link" href="mailto:poudel@apexmcc.com">poudel@apexmcc.com</a></td>
+            <td><a class="apply-link" href="mailto:jayesh.poudel@apexmcc.org">Email Jayesh Poudel</a></td>
             <td>—</td>
           </tr>
         </tbody>
       </table>
     </section>
-
-    <p class="staff-edit">Last Edited: 8/5/2026 — The Company Idiot: Mr Hill</p>
   </main>
 
   <script src="../includes/include.js"></script>
+  <script>
+    const searchInput = document.querySelector(".search-input");
+    const rows = Array.from(document.querySelectorAll("#staff-tbody tr"));
+
+    searchInput.addEventListener("input", () => {
+      const query = searchInput.value.trim().toLowerCase();
+      let visible = 0;
+      rows.forEach((row) => {
+        const match = row.textContent.toLowerCase().includes(query);
+        row.style.display = match ? "" : "none";
+        if (match) visible++;
+      });
+      if (visible === 0) {
+        let empty = document.querySelector("#staff-tbody tr.empty-row");
+        if (!empty) {
+          empty = document.createElement("tr");
+          empty.className = "empty-row";
+          empty.innerHTML = '<td colspan="4" style="padding: 1.25rem 0.75rem; color: var(--gray-muted);">No results found</td>';
+          document.querySelector("#staff-tbody").appendChild(empty);
+        }
+        empty.style.display = "";
+      } else {
+        const empty = document.querySelector("#staff-tbody tr.empty-row");
+        if (empty) empty.style.display = "none";
+      }
+    });
+  </script>
 </body>
 </html>
