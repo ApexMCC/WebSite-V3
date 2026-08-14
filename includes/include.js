@@ -19,7 +19,11 @@
           html = html.replace(/\{base\}/g, base);
           el.outerHTML = html;
         } catch (err) {
-          el.outerHTML = "<!-- include failed: " + url + " -->";
+          const iframe = document.createElement("iframe");
+          iframe.src = url;
+          iframe.style.cssText =
+            "width:100%;height:180px;border:0;display:block;";
+          el.replaceWith(iframe);
         }
       })
     );

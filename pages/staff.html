@@ -164,8 +164,68 @@
       font-size: 0.875rem;
       color: var(--gray-muted);
     }
+
+    .resources-section {
+      margin-bottom: 3rem;
+    }
+
+    .resources-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 1.5rem;
+    }
+
+    .resources-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .resource-card {
+      background: var(--gray-dark);
+      border: 1px solid var(--accent-green-deep);
+      border-radius: 8px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .resource-title {
+      color: var(--accent-green-light);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .resource-desc {
+      color: var(--text-light);
+      font-size: 0.9rem;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .resource-btn {
+      display: inline-block;
+      background: var(--accent-green);
+      color: #fff;
+      text-decoration: none;
+      padding: 0.6rem 1.25rem;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.875rem;
+      align-self: flex-start;
+    }
+
+    .resource-btn:hover {
+      background: var(--accent-green-dark);
+    }
+
+    @media (max-width: 768px) {
+      .resources-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
-  <link rel="stylesheet" href="../css/navbar.css" />
   <link rel="stylesheet" href="../css/staff.css" />
 </head>
 <body>
@@ -173,6 +233,27 @@
   <div data-include="../includes/nav.html" data-base="../"></div>
 
   <main class="directory-container">
+    <section class="resources-section">
+      <h2 class="resources-title">Quick Resources</h2>
+      <div class="resources-grid">
+        <div class="resource-card">
+          <h3 class="resource-title">Email</h3>
+          <p class="resource-desc">Log in to your MSU email.</p>
+          <a class="resource-btn" href="#">Log in to email</a>
+        </div>
+        <div class="resource-card">
+          <h3 class="resource-title">EBS</h3>
+          <p class="resource-desc">Log in to MSU's Enterprise Business Systems.</p>
+          <a class="resource-btn" href="#">Log in to EBS</a>
+        </div>
+        <div class="resource-card">
+          <h3 class="resource-title">Human Resources</h3>
+          <p class="resource-desc">Find resources from MSU HR.</p>
+          <a class="resource-btn" href="#">Visit HR site</a>
+        </div>
+      </div>
+    </section>
+
     <div class="breadcrumb">
       <a href="#">Home</a> / <span>Apex MCC</span>
     </div>
