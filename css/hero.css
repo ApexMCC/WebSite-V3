@@ -52,6 +52,7 @@
   align-items: flex-start;
   text-align: left;
   padding: 18rem clamp(2rem, 8vw, 6rem) 14rem;
+  margin-left: 2rem;
   pointer-events: none;
 }
 
