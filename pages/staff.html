@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Staff Directory · APEX MCC</title>
+  <link rel="icon" type="image/png" href="../Slideshow/apex_logomain.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-primary: #000000;
@@ -23,7 +27,7 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: var(--bg-primary);
       color: var(--text-light);
       line-height: 1.5;
@@ -62,7 +66,7 @@
       margin-bottom: 2rem;
     }
 
-    .search-input {
+    .directory-search {
       width: 100%;
       padding: 0.75rem 1rem;
       background: var(--gray-dark);
@@ -72,8 +76,14 @@
       font-size: 1rem;
     }
 
-    .search-input::placeholder {
+    .directory-search::placeholder {
       color: var(--gray-muted);
+    }
+
+    .directory-search:focus {
+      outline: none;
+      border-color: var(--accent-green-light);
+      box-shadow: 0 0 0 3px rgba(59, 201, 78, 0.2);
     }
 
     .tabs-container {
@@ -240,30 +250,30 @@
       <div class="resources-grid">
         <div class="resource-card">
           <h3 class="resource-title">Email</h3>
-          <p class="resource-desc">Log in to your MSU email.</p>
+          <p class="resource-desc">Log in to your Apex email.</p>
           <a class="resource-btn" href="#">Log in to email</a>
         </div>
         <div class="resource-card">
           <h3 class="resource-title">EBS</h3>
-          <p class="resource-desc">Log in to MSU's Enterprise Business Systems.</p>
+          <p class="resource-desc">Log in to Apex's Enterprise Business Systems.</p>
           <a class="resource-btn" href="#">Log in to EBS</a>
         </div>
         <div class="resource-card">
           <h3 class="resource-title">Human Resources</h3>
-          <p class="resource-desc">Find resources from MSU HR.</p>
+          <p class="resource-desc">Find resources from Apex HR.</p>
           <a class="resource-btn" href="#">Visit HR site</a>
         </div>
       </div>
     </section>
 
     <div class="breadcrumb">
-      <a href="#">Home</a> / <span>Apex MCC</span>
+      <a href="index.html">Home</a> / <span>Apex MCC</span>
     </div>
 
     <h1 class="directory-title">Search Directory</h1>
 
     <div class="search-box-container">
-      <input type="text" class="search-input" placeholder="Search by name" />
+      <input type="text" class="directory-search" placeholder="Search by name" />
     </div>
 
     <div class="tabs-container">
@@ -319,7 +329,7 @@
 
   <script src="../includes/include.js"></script>
   <script>
-    const searchInput = document.querySelector(".search-input");
+    const searchInput = document.querySelector(".directory-search");
     const rows = Array.from(document.querySelectorAll("#staff-tbody tr"));
 
     searchInput.addEventListener("input", () => {

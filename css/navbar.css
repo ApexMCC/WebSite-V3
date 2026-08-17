@@ -90,16 +90,61 @@
   gap: 8px;
 }
 
-/* ===== Middle Header (Search) ===== */
+/* ===== Middle Header (Brand + Search) ===== */
 .middle-header {
   padding: 12px 0 16px 0;
 }
 
 .middle-container {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
+  gap: 24px;
+}
+
+/* Brand lockup */
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #ffffff;
+  min-width: 0;
+}
+
+.brand-logo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.45);
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.brand-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.brand-name em {
+  font-style: normal;
+  color: var(--accent-green-light, #3bc94e);
+}
+
+.brand-tag {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.75;
 }
 
 /* Search Bar */
@@ -117,6 +162,10 @@
   font-size: 14px;
   color: #333333;
   outline: none;
+}
+
+.search-input:focus {
+  box-shadow: 0 0 0 3px rgba(59, 201, 78, 0.45);
 }
 
 .search-btn {
@@ -155,21 +204,41 @@
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 18px;
 }
 
 .main-nav a {
   color: #ffffff;
   text-decoration: none;
   font-size: 14px;
-  font-weight: 400;
-  opacity: 0.9;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.92;
   text-shadow: 0 1px 5px rgba(0, 0, 0, 0.65);
-  transition: opacity 0.2s ease;
+  position: relative;
+  padding: 4px 0;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: var(--accent-green-light, #3bc94e);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
 }
 
 .main-nav a:hover {
   opacity: 1;
+}
+
+.main-nav a:hover::after {
+  transform: scaleX(1);
 }
 
 .nav-separator {
@@ -203,6 +272,76 @@
   background-color: #f3f4f6;
 }
 
+/* ===== Nav toggle (mobile hamburger) ===== */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 6px;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ===== Mobile dropdown menu ===== */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: rgba(13, 20, 12, 0.97);
+  border-bottom: 3px solid var(--accent-green-light, #3bc94e);
+  padding: 12px 24px 20px;
+}
+
+.mobile-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 13px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: color 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  color: var(--accent-green-light, #3bc94e);
+}
+
+.mobile-menu a.mobile-apextoday {
+  color: var(--accent-green-light, #3bc94e);
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
 /* ===== MOBILE ===== */
 @media (max-width: 800px) {
   .utility-nav-left {
@@ -217,9 +356,18 @@
     padding: 10px 0 12px 0;
   }
 
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+  }
+
+  .brand-tag {
+    display: none;
+  }
+
   .search-wrapper {
     width: 100%;
-    max-width: 220px;
+    max-width: 180px;
   }
 
   .main-nav {
@@ -234,5 +382,17 @@
 
   .btn-apextoday {
     display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .mobile-menu.open {
+    display: flex;
   }
 }

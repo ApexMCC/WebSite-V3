@@ -29,3 +29,27 @@
     );
   })();
 })();
+
+// Mobile nav toggle (runs after includes are injected).
+window.__includesReady.then(function () {
+  const toggle = document.getElementById("navToggle");
+  const menu = document.getElementById("mobileMenu");
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener("click", function () {
+    const open = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!open));
+    menu.setAttribute("aria-hidden", String(open));
+    menu.classList.toggle("open", !open);
+    document.body.classList.toggle("nav-open", !open);
+  });
+
+  menu.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      toggle.setAttribute("aria-expanded", "false");
+      menu.setAttribute("aria-hidden", "true");
+      menu.classList.remove("open");
+      document.body.classList.remove("nav-open");
+    });
+  });
+});

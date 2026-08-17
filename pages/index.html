@@ -3,7 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apex Systems — Home</title>
+  <meta name="description" content="Apex MCC — a Michigan non-profit creating a vibrant community space that supports and empowers local individuals in need.">
+  <title>Apex MCC — Home</title>
+  <link rel="icon" type="image/png" href="../Slideshow/apex_logomain.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-primary: #0d140c;
@@ -27,10 +32,104 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
       background: var(--bg-primary);
       color: var(--text-light);
       line-height: 1.5;
+    }
+
+    /* ===== Quick stats band below the hero ===== */
+    .stats-band {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--gray-dark);
+      padding: 3.5rem 1.5rem;
+    }
+
+    .stats-band-inner {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .stat-num {
+      font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      color: var(--accent-green-light);
+      letter-spacing: 0.02em;
+    }
+
+    .stat-label {
+      margin-top: 0.35rem;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--gray-muted);
+      font-weight: 600;
+    }
+
+    /* ===== Quick-link cards ===== */
+    .quick-section {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 1.5rem 5rem;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .quick-card {
+      background: linear-gradient(160deg, rgba(41, 49, 43, 0.6), rgba(24, 64, 28, 0.45));
+      border: 1px solid var(--gray-dark);
+      border-top: 3px solid var(--accent-green);
+      border-radius: 10px;
+      padding: 2rem 1.75rem;
+      text-decoration: none;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--accent-green);
+      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45);
+    }
+
+    .quick-card h3 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+      color: var(--text-light);
+      margin-bottom: 0.6rem;
+    }
+
+    .quick-card p {
+      font-size: 0.92rem;
+      color: var(--gray-muted);
+    }
+
+    .quick-card .quick-link {
+      display: inline-block;
+      margin-top: 1.1rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent-green-light);
+    }
+
+    @media (max-width: 900px) {
+      .stats-band-inner { grid-template-columns: repeat(2, 1fr); }
+      .quick-grid { grid-template-columns: 1fr; }
     }
   </style>
   <link rel="stylesheet" href="../css/navbar.css?v=6" />
@@ -125,14 +224,60 @@
 
     <div class="hero-content">
       <h1>Welcome to <span class="hero-accent">Apex</span></h1>
-      <p>Where ambition meets achievement. Explore a world-class community of innovators, leaders, and changemakers built to help you reach the top.</p>
-      <a href="#" class="hero-cta">Apply Today</a>
+      <p>Where community comes first. Apex MCC creates a vibrant space that supports and empowers local individuals in need — with dignity, opportunity, and hope.</p>
+      <div class="hero-actions">
+        <a href="#get-involved" class="hero-cta">Get Involved</a>
+        <a href="#donate" class="hero-cta ghost">Donate</a>
+      </div>
     </div>
 
     <button class="hero-arrow prev" id="prevBtn" aria-label="Previous slide">&#10094;</button>
     <button class="hero-arrow next" id="nextBtn" aria-label="Next slide">&#10095;</button>
 
     <div class="dots" id="dots"></div>
+
+    <a href="#stats" class="hero-scroll">Scroll</a>
+  </section>
+
+  <section class="stats-band" id="stats">
+    <div class="stats-band-inner">
+      <div class="stat">
+        <div class="stat-num">10K+</div>
+        <div class="stat-label">Individuals Served Yearly</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">40+</div>
+        <div class="stat-label">Programs &amp; Services</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">500+</div>
+        <div class="stat-label">Active Volunteers</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">25+</div>
+        <div class="stat-label">Community Partners</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="quick-section">
+    <div class="quick-grid">
+      <a href="#" class="quick-card">
+        <h3>Programs &amp; Services</h3>
+        <p>Food assistance, housing support, workforce development, and more — designed to meet neighbors where they are.</p>
+        <span class="quick-link">Explore programs &rarr;</span>
+      </a>
+      <a href="#" class="quick-card">
+        <h3>Volunteer</h3>
+        <p>Lend your time and talent. Volunteers are the heart of everything we do at Apex.</p>
+        <span class="quick-link">Find volunteer roles &rarr;</span>
+      </a>
+      <a href="#" class="quick-card">
+        <h3>Support the Mission</h3>
+        <p>Your generosity powers our community space and the families who depend on it.</p>
+        <span class="quick-link">Make a donation &rarr;</span>
+      </a>
+    </div>
   </section>
 
   <footer class="footer">

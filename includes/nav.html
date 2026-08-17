@@ -6,34 +6,33 @@
     <div class="container top-bar-container">
       <div class="utility-nav-left">
         <span>For:</span>
-        <a href="#future-students">Future Students</a>
+        <a href="#community">Community</a>
         <span class="separator">|</span>
-        <a href="#current-students">Current Students</a>
+        <a href="#volunteers">Volunteers</a>
         <span class="separator">|</span>
-        <a href="#alumni">Alumni</a>
+        <a href="#donors">Donors</a>
         <span class="separator">|</span>
-        <a href="#faculty-staff">Faculty &amp; Staff</a>
+        <a href="#partners">Partners</a>
       </div>
       <div class="utility-nav-right">
-        <a href="#apply">Apply</a>
+        <a href="#get-involved">Get Involved</a>
         <span class="separator">|</span>
-        <a href="#visit">Visit</a>
+        <a href="#events">Events</a>
         <span class="separator">|</span>
-        <a href="#give">Give</a>
+        <a href="#donate">Donate</a>
       </div>
     </div>
   </div>
 
-  <!-- Logo Strip -->
-  <div class="logo-strip">
-    <div class="container">
-      <img src="../Slideshow/apex_long.webp" alt="Apex logo" class="topbar-logo" />
-    </div>
-  </div>
-
-  <!-- Middle Header: Search -->
+<!-- Middle Header: Brand + Search -->
   <div class="middle-header">
     <div class="container middle-container">
+      <a href="{base}pages/" class="brand-lockup" aria-label="Apex MCC home">
+        <img src="{base}Slideshow/apex_logomain.png" alt="" class="brand-logo" />
+        <span class="brand-text">
+      <span class="brand-name">Apex <em>MCC</em></span>
+        </span>
+      </a>
       <div class="search-wrapper">
         <input type="text" placeholder="Search" class="search-input">
         <button type="submit" class="search-btn" aria-label="Search">
@@ -51,20 +50,34 @@
       <nav class="main-nav">
         <a href="#about">About</a>
         <span class="nav-separator">|</span>
-        <a href="#admissions">Admissions</a>
+        <a href="#programs">Programs</a>
         <span class="nav-separator">|</span>
-        <a href="#academics">Academics</a>
+        <a href="#get-involved">Get Involved</a>
         <span class="nav-separator">|</span>
-        <a href="#research">Research</a>
+        <a href="#events">Events</a>
         <span class="nav-separator">|</span>
-        <a href="#campus-life">Campus Life</a>
+        <a href="#impact">Impact</a>
         <span class="nav-separator">|</span>
-        <a href="#athletics">Athletics</a>
+        <a href="#donate">Donate</a>
       </nav>
 
       <div class="nav-action">
         <a href="#apextoday" class="btn-apextoday">ApexToday</a>
       </div>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
+
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <a href="#about">About</a>
+    <a href="#programs">Programs</a>
+    <a href="#get-involved">Get Involved</a>
+    <a href="#events">Events</a>
+    <a href="#impact">Impact</a>
+    <a href="#donate">Donate</a>
+    <a href="#apextoday" class="mobile-apextoday">ApexToday</a>
+  </nav>
 </header>
